@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('admin/categories', 'AdminCategoriesController');
+
+Route::resource('admin/posts', 'AdminPostsController');
