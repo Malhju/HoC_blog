@@ -12,6 +12,20 @@
 */
 
 /**
+ * Routes du côté Admin
+ */
+
+//Yassin
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('admin', 'AdminController@dashboard');
+Route::resource('admin/users', 'AdminUsersController', ['except'=>['store', 'update', 'destroy']]);
+Route::resource('admin/posts', 'AdminPostsController', ['except'=>['store', 'update', 'destroy']]);
+
+/**
  * Routes du côté utilisateur
  */
 
@@ -24,3 +38,4 @@ Route::resource('/posts', 'PostsController', ["only"=>[
 Route::resource('/categories', 'CategoriesController', ["only"=>[
     "index", "show"
 ]]);
+
