@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminPostsController extends Controller
+class AdminCategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class AdminPostsController extends Controller
     public function index()
     {
         //
-        return view('admin/posts/index');
-    
+        return view('admin/categories/index');
     }
 
     /**
@@ -26,7 +25,7 @@ class AdminPostsController extends Controller
     public function create()
     {
         //
-        return view('admin/posts/create');
+        return view('admin/posts/edit');
     }
 
     /**
@@ -38,7 +37,6 @@ class AdminPostsController extends Controller
     public function store(Request $request)
     {
         //
-        
     }
 
     /**
@@ -50,7 +48,7 @@ class AdminPostsController extends Controller
     public function show($id)
     {
         //
-        return view('admin/posts/show');
+        return view('admin/categories/show');
     }
 
     /**
@@ -62,7 +60,7 @@ class AdminPostsController extends Controller
     public function edit($id)
     {
         //
-        return view('admin/posts/edit');
+        return view('admin/categories/edit');
     }
 
     /**
@@ -75,6 +73,7 @@ class AdminPostsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        return view('admin/categories/update');
     }
 
     /**
@@ -86,6 +85,6 @@ class AdminPostsController extends Controller
     public function destroy($id)
     {
         //
-        return view('admin/posts/destroy');
+        return view('admin/categories/destroy');
     }
 }
