@@ -13,4 +13,6 @@
 
 Route::get('/', 'HomeController@home');
 
-Route::resource('/posts', 'PostsController');
+Route::resource('/posts', 'PostsController', ["only"=>[
+    "index", "show"
+]]);
