@@ -11,6 +11,10 @@
 |
 */
 
+/**
+ * Routes du côté utilisateur
+ */
+
 Route::get('/', 'HomeController@home');
 
 Route::resource('/posts', 'PostsController', ["only"=>[
