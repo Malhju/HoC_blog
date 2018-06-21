@@ -11,8 +11,30 @@
 |
 */
 
+/**
+ * Routes du côté Admin
+ */
 
-Route::get('admin', 'AdminController@index');
-
+//David
 Route::resource('admin/categories', 'AdminCategoriesController');
 Route::resource('admin/posts', 'AdminPostsController',['except'=>['store','destroy']]);
+
+//Hafidou
+Route::resource('admin/medias','AdminMediasController',['only' => ['index', 'create','edit','destroy']]);
+Route::resource('admin/comments','AdminCommentsController', ['only' =>['index', 'edit','destroy']]);
+
+//Yassin
+Route::get('admin', 'AdminController@dashboard');
+Route::resource('admin/users', 'AdminUsersController', ['except'=>['store', 'update', 'destroy']]);
+
+/**
+ * Routes du côté utilisateur
+ */
+Route::get('/', 'HomeController@home');
+Route::resource('/posts', 'PostsController', ["only"=>[
+    "index", "show"
+]]);
+Route::resource('/categories', 'CategoriesController', ["only"=>[
+    "index", "show"
+]]);
+

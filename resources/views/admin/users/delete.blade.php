@@ -11,9 +11,11 @@
 <body>
 
     
-<h1>Mon INDEX</h1>
+<h1>Mon DELETE</h1>
 
-MON INDEX
+
+CA DELETE A BALLE!!
+
 
 </body>
 </html>

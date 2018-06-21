@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    
-<h1>Mon INDEX</h1>
+    categories/show
 </body>
 </html>
