@@ -11,6 +11,8 @@
 |
 */
 
-Route::resource('admin/categories', 'AdminCategoriesController');
 
+Route::get('admin', 'AdminController@index');
+
+Route::resource('admin/categories', 'AdminCategoriesController');
 Route::resource('admin/posts', 'AdminPostsController',['except'=>['store','destroy']]);
