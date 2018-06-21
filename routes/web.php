@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('admin', 'AdminController@dashboard');
+Route::resource('admin/users', 'AdminUsersController', ['except'=>['store', 'update', 'destroy']]);
+Route::resource('admin/posts', 'AdminPostsController', ['except'=>['store', 'update', 'destroy']]);
