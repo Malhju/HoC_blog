@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (){
+ return view('welcome');
 });
-Route::resource
+Route::resource('/admin/medias','AdminMediasController',['only' => ['index', 'create','edit','destroy']]);
+Route::resource('/admin/comments','AdminCommentsController', ['only' =>['index', 'edit','destroy']]);
+/*Route::resource('/admin/medias/upload','AdminMediasController');*/
+/*Route::get('/admin/medias','AdminMediasController@index');*/
+/*Route::get('/admin/medias/upload','AdminMediasController@create');*/
+/*Route::get('/admin/medias/edit','AdminMediasController@edit');*/
+/*Route::get('/admin/medias/delete','AdminMediasController@destroy');*/
