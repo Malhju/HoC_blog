@@ -10,16 +10,17 @@ class CreateCommentsTable extends Migration
      * Run the migrations.
      *
      * @return void
+     * 
      */
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('post_id');
+            $table->integer('post_id')->index()->unsignned();
             $table->text('author');            
             $table->string('email');
             $table->longText('content');
-            $table->boolean('is_active');
+            $table->boolean('is_active')->default(0);
             $table->timestamps();
         });
     }
