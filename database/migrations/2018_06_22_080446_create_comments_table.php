@@ -23,7 +23,6 @@ class CreateCommentsTable extends Migration
             $table->boolean('is_active')->default(0);
             $table->timestamps();
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
-
        });
 
 
