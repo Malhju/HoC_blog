@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('role_id')->index()->unsigned()->nullable();
             $table->boolean('is_active')->default(0);
             $table->timestamps();
+            $table->foreign('role_id')->references('id')->on('role')->onDelete('cascade');
         });
     }
 
