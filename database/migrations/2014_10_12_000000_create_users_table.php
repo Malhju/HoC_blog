@@ -19,8 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
-            $table->integer('role_id');
-            $table->boolean('is_active')->default(0); // you're the MASTER of the TABLE
+            $table->integer('role_id')->index()->nullable()->unsigned();
+            $table->boolean('is_active')->default(0); 
             $table->timestamps();
         });
     }
