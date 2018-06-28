@@ -38,3 +38,7 @@ Route::resource('/categories', 'CategoriesController', ["only"=>[
     "index", "show"
 ]]);
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
