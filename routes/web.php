@@ -30,7 +30,7 @@ Route::resource('admin/users', 'AdminUsersController', ['except'=>['store', 'upd
 /**
  * Routes du côté utilisateur
  */
-Route::get('/', 'HomeController@home');
+Route::get('/', 'HomeController@index');
 Route::resource('/posts', 'PostsController', ["only"=>[
     "index", "show"
 ]]);
