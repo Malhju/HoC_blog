@@ -20,7 +20,7 @@ Route::resource('admin/categories', 'AdminCategoriesController');
 Route::resource('admin/posts', 'AdminPostsController',['except'=>['store','destroy']]);
 
 //Hafidou
-Route::resource('admin/medias','AdminMediasController',['only' => ['index', 'create','edit','destroy']]);
+Route::resource('admin/photos','AdminPhotosController',['only' => ['index', 'create','edit','destroy']]);
 Route::resource('admin/comments','AdminCommentsController', ['only' =>['index', 'edit','destroy']]);
 
 //Yassin

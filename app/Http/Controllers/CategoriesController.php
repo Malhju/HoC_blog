@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 
 class CategoriesController extends Controller
 {
@@ -13,7 +14,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-       return view("User/Categories/index");
+        $Categories = Category::all();
+        return view("User.Categories.index", compact("Categories"));
     }
 
     /**
@@ -24,6 +26,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-       return view("User/Categories/show");
+        $Category = Category::findOrFail($id);
+        return view("User.Categories.show", compact("Category"));
     }
 }

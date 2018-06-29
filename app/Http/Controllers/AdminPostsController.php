@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Post;
+use App\User;
 class AdminPostsController extends Controller
 {
     /**
@@ -13,8 +14,8 @@ class AdminPostsController extends Controller
      */
     public function index()
     {
-
-        return view('admin/posts/index');
+        $Posts = Post::all();
+        return view('admin.posts.index', compact('Posts'));
     
     }
 
@@ -25,8 +26,7 @@ class AdminPostsController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin/posts/create');
+        return view('admin.posts.create');
     }
 
     /**
@@ -37,7 +37,14 @@ class AdminPostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $User = User::findOrFail(3);
+        $input = $request->all();
+        $Post = new Post();
+        $Post->title = $input['title'];
+        $Post->content = $input['content'];
+        $Post->is_active = $input['is_active'];
+        $User->posts()->save($Post);
+        return redirect()->route('admin.posts.index');
         
     }
 
@@ -49,8 +56,8 @@ class AdminPostsController extends Controller
      */
     public function show($id)
     {
-        //
-        return view('admin/posts/show');
+        $Post = Post::findOrFail($id); 
+        return view('admin.posts.show', compact('Post'));
     }
 
     /**
@@ -61,8 +68,8 @@ class AdminPostsController extends Controller
      */
     public function edit($id)
     {
-        //
-        return view('admin/posts/edit');
+        $Post = Post::findOrFail($id);
+        return view('admin.posts.edit', compact('Post'));
     }
 
     /**
@@ -74,7 +81,8 @@ class AdminPostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Post = Post::findOrFail($id);
+        $Post->update($request->all());
     }
 
     /**
@@ -85,7 +93,7 @@ class AdminPostsController extends Controller
      */
     public function destroy($id)
     {
-        //
-        return view('admin/posts/destroy');
+        Post::whereId($id)->delete();
+        return redirect()->route('admin.posts.index');
     }
 }

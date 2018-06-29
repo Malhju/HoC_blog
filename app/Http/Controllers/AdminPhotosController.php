@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminMediasController extends Controller
+class AdminPhotosController extends Controller
 {
     public function index()
     {
-         return view('admin/medias/index');
+         return view('admin.medias.index');
     }
 
     public function create()

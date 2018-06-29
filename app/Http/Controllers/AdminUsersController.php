@@ -3,27 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
 class AdminUsersController extends Controller
 {
 
     public function index()
     {
-        return view('admin/users/index');
+        $User = User::all();
+        return view('admin.users.index', compact('User'));
     }
 
     public function create()
     {
-        return view('admin/users/create');
+        return view('Admin.users.Create');
     }
 
     public function show($id)
     {
-        return view('admin/users/show');
+        $User::findOrFail($id);
+        return view('admin.users.show', compact('User'));
     }
 
     public function edit($id)
-    {
-        return view('admin/users/edit');
+    {   
+        $User = User::findOrFail($id);
+        return view('admin.users.edit', compact('User'));
     }
 }

@@ -14,14 +14,14 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function categorie() {
-        return $this->belongsTo("App\Categorie");
+    public function category() {
+        return $this->belongsTo("App\Category");
     }
 
     public function comments() {
         return $this->hasMany("App\Comment");
     }
     public function photos() {
-        return $this->morphMany('App\Photo' ,'imageable' );
+        return $this->morphMany('App\Photo', 'imageable');
     }
 }
