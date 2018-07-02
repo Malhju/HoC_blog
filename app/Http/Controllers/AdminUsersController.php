@@ -15,7 +15,7 @@ class AdminUsersController extends Controller
 
     public function create()
     {
-        return view('Admin.users.Create');
+        return view('admin.users.Create');
     }
 
     public function show($id)

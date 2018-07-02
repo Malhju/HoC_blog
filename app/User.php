@@ -30,7 +30,12 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany('App\Post');
     }
+    
     public function roles() {
         return $this->belongsToMany('App\Role');
+    }
+
+    public function photos() {
+        return $this->morphMany('App\Photo', 'imageable');
     }
 }
