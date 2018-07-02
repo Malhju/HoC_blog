@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
@@ -71,7 +73,10 @@
             </div>
         </nav>
 
-        @yield('content')
+        <section>
+            @yield('content')
+        </section>
+        
     </div>
 
     <!-- Scripts -->

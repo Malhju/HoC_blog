@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Comment;
 
 class PostsController extends Controller
 {
@@ -27,6 +28,7 @@ class PostsController extends Controller
     public function show($id)
     {
         $Post = Post::findOrFail($id);
-        return view("User.Posts.show", compact("Post"));
+        $Comments =$Post->comments;
+        return view("User.Posts.show", compact("Post", "Comments"));
     }
 }
