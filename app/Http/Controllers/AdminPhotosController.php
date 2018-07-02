@@ -3,39 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Photo;
 
 class AdminPhotosController extends Controller
 {
     public function index()
     {
-         return view('admin.medias.index');
+        $Photos = Photo::all();
+        return view('admin.photos.index', compact('Photos'));
     }
 
-    public function create()
+    public function upload(Request $request, $id)
     {
-        return view('admin/medias/upload');
+        $Photos = Photo::findOrFail($id);
+        $Photos->update($resquest->all());
     }
 
-    public function store(Request $request)
+    public function destroy($id)
     {
-    }
-
-
-    public function show($id)
-    {
-    }
-
-    public function edit($id)
-    {
-        return view('admin/medias/edit');
-    }
-
-    public function update(Request $request, $id)
-    {
-    }
-
-    public function destroy()
-    {
-        return view('admin/medias/delete');
+        Photo::whereId($id)->delete();
+        return redirect()->route('admin.dashboard');
     }
 }
