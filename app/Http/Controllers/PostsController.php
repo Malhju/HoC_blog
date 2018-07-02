@@ -28,7 +28,7 @@ class PostsController extends Controller
     public function show($id)
     {
         $Post = Post::findOrFail($id);
-        $Comments =$Post->comments;
+        $Comments = $Post->comments;
         return view("User.Posts.show", compact("Post", "Comments"));
     }
 }

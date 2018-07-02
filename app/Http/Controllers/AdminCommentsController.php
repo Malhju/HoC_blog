@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Comment;
 
 class AdminCommentsController extends Controller
 {
@@ -14,7 +15,7 @@ class AdminCommentsController extends Controller
     public function index()
     {
         
-        return view('admin/comments/index');
+        return view('admin.comments.index');
     }
 
     /**
@@ -24,7 +25,8 @@ class AdminCommentsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id){
-        return view('admin/comments/edit');
+        $Comment = Comment::findOrFail($id);
+        return view('admin.comments.edit', compact('Comment'));
     }
 
 
@@ -36,7 +38,8 @@ class AdminCommentsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        return view('admin/comments/delete');
+    {   
+        Comment::findOrFail($id)->delete();
+        return redirect('admin.index');    
     }
 }
