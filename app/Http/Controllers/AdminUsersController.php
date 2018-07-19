@@ -29,4 +29,21 @@ class AdminUsersController extends Controller
         $User = User::findOrFail($id);
         return view('admin.users.edit', compact('User'));
     }
+
+    public function store() 
+    {
+
+    }
+
+    public function update() 
+    {
+        
+    }
+
+    public function delete() 
+    {
+        
+    }
 }
+
+//store update delete
