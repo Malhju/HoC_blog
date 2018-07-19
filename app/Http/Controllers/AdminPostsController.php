@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+
 class AdminPostsController extends Controller
 {
 
@@ -42,11 +44,12 @@ class AdminPostsController extends Controller
      */
     public function store(Request $request)
     {
-        $User = User::findOrFail(3);
+        $User = User::findOrFail(Auth::id());
         $input = $request->all();
         $Post = new Post();
         $Post->title = $input['title'];
         $Post->content = $input['content'];
+        $Post->photo_id = $input['photo_id'];
         $Post->is_active = $input['is_active'];
         $User->posts()->save($Post);
         return redirect()->route('admin.posts.index');

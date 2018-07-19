@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
-
+use App\User;
 class AdminCategoriesController extends Controller
 {
 
@@ -43,10 +43,18 @@ class AdminCategoriesController extends Controller
      */
     public function store(Request $request)
     {
+        $User = User::findOrFail(Auth::id());
+        $input = $request->all();
+        $Category = new Category();
+        $Category->title = $input['name'];
+        $User->categories()->save($Category);
+        return redirect()->route('admin.categories.index');
         //
     }
 
-    /**
+
+
+        /**
      * Display the specified resource.
      *
      * @param  int  $id
