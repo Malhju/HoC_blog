@@ -1,19 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+@extends('layouts.app')
+@section('content')
 
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-
-    
-<h1>Mon INDEX</h1>
-
-MON INDEX
-
-</body>
-</html>
+    <h1> Articles</h1>
+    <a href="{{ route('posts.create') }}">Créer un article</a> <br>
+ 
+    <ul>
+    @foreach ($Posts as $Post)
+        <li><a href="{{ route('posts.show', $Post->id) }}">{{$Post->title}}</a></li>
+    @endforeach
+    </ul>
+    <a href="{{ route('dashboard') }}">Dashboard</a>
+  
+@stop

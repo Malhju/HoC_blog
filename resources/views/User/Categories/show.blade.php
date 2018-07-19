@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Show Categories User</title>
-</head>
-<body>
-    <h1>USER CATEGORIES SHOW</h1>
-</body>
-</html>
+@extends('layouts.app')
+@section('content')
+    <ul>
+    <!--  $Category->posts : chercher methode posts() dans le Model Category.php    -->
+        
+        @foreach ($Category->posts as $post)
+
+            <li><a href="{{ route('user.posts.show', $post->id ) }}">{{ $post->title }}</a></li>
+        @endforeach
+    </ul>
+
+
+@stop
