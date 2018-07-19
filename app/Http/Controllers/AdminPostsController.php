@@ -7,6 +7,12 @@ use App\Post;
 use App\User;
 class AdminPostsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +22,6 @@ class AdminPostsController extends Controller
     {
         $Posts = Post::all();
         return view('admin.posts.index', compact('Posts'));
-    
     }
 
     /**

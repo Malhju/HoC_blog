@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 
 class AdminCategoriesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,8 +20,8 @@ class AdminCategoriesController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin/categories/index');
+        $Categories = Category::all();
+        return view('admin.categories.index', compact('Categories'));
     }
 
     /**
@@ -24,8 +31,8 @@ class AdminCategoriesController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin/posts/edit');
+        
+        return view('admin.categories.create');
     }
 
     /**
@@ -47,8 +54,8 @@ class AdminCategoriesController extends Controller
      */
     public function show($id)
     {
-        //
-        return view('admin/categories/show');
+        $Category = Category::findOrFail($id);
+        return view('admin.categories.show', compact("Category"));
     }
 
     /**

@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-<h1>Mon INDEX</h1>
-</body>
-</html>
+@extends('layouts.app')
+@section('content')
+    <h1>Categories</h1>
+    <a href="{{ route('categories.create') }}">Créer une catégorie</a> <br>
+
+    <ul>
+        @foreach ($Categories as $categorie)
+            <li><a href="{{ route('categories.show', $categorie->id ) }}">{{ $categorie->name }}</a></li>
+        @endforeach
+    </ul>
+    <a href="{{ route('dashboard') }}">Dashboard</a>
+@stop
