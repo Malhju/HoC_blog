@@ -17,7 +17,7 @@ class AdminPhotosController extends Controller
     }
 
     public function create()
-    {
+    { 
         return view('admin/medias/upload');
     }
 

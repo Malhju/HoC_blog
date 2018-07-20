@@ -33,8 +33,8 @@ class AdminCategoriesController extends Controller
      */
     public function create()
     {
-        
-        return view('admin.categories.create');
+        $Categories = Category::all();
+        return view('admin.categories.create', compact('Categories'));
     }
 
     /**

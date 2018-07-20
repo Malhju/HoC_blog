@@ -8,6 +8,14 @@
     <br/>
     {!! Form::submit("Créer catégorie") !!}
     {!! Form::close() !!}
+    <nav>
+    <h3>toutes les catégories crées</h3>
+        <ul>
+            @foreach ($Categories as $categorie)
+                <li><a href="{{ route('categories.show', $categorie->id ) }}">{{ $categorie->name }}</a></li>
+            @endforeach
+        </ul>
+    </nav>
     <a href="{{ route('dashboard') }}">Dashboard</a>
 @stop
 
