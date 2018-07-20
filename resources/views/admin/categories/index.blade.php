@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Categories</h1>
+    <h1 class="text-center">Categories</h1>
     <a href="{{ route('categories.create') }}">Créer une catégorie</a> <br>
 
     <ul>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Créer une catégorie</h1>
+    <h1 class="text-center">Créer une catégorie</h1>
     {!! Form::open(['method' => 'POST', 'action' => 'AdminCategoriesController@store']) !!}
 
     {!! Form::label("title", "Nom de la categorie") !!}

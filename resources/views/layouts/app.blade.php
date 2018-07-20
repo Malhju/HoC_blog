@@ -71,8 +71,9 @@
                 </div>
             </div>
         </nav>
-
-        @yield('content')
+        <section class="posts-list container">
+            @yield('content')
+        </section>
     </div>
 
     <!-- Scripts -->

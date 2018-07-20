@@ -8350,3 +8350,13 @@ button.close {
   }
 }
 
+.posts-list img {
+  height: 100px;
+}
+
+.posts-list h3 {
+  height: 50px;
+  overflow: hidden;
+  text-overflow: "...";
+}
+

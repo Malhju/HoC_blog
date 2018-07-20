@@ -8,7 +8,7 @@
 </head>
 <body>
     
-<h1>Mon EDIT</h1>
+<h1 class="text-center">Mon EDIT</h1>
 </body>
 </html>
 

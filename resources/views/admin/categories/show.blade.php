@@ -8,6 +8,6 @@
 </head>
 <body>
     
-<h1>Mon SHOW</h1>
+<h1 class="text-center">Mon SHOW</h1>
 </body>
 </html>
