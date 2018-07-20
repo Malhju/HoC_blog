@@ -4,20 +4,19 @@
 
 // Variables
 @import "variables";
-
+@import "init";
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 
 .posts-list{
-  img {
-    height: 100px;
-  }
   a {
-
     &:hover {
 
     }
+  }
+  .img-crop {
+    height: 150px;
   }
   h3{
     height: 50px;

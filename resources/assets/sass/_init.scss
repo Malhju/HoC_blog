@@ -4,3 +4,14 @@ a{
     text-underline: none;
   }
 }
+
+figure{
+  overflow: hidden;
+}
+
+.img-crop {
+  overflow: hidden;
+  img {
+    width:100%;
+  }
+}
