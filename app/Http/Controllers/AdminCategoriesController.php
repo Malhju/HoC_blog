@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+
 class AdminCategoriesController extends Controller
 {
 
@@ -46,9 +48,9 @@ class AdminCategoriesController extends Controller
         $User = User::findOrFail(Auth::id());
         $input = $request->all();
         $Category = new Category();
-        $Category->title = $input['name'];
+        $Category->name = $input['title'];
         $User->categories()->save($Category);
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('categories.index');
         //
     }
 

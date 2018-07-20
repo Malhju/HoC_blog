@@ -6,7 +6,7 @@
     {!! Form::label("title", "Nom de la categorie") !!}
     {!! Form::text("title", null)!!}
     <br/>
-    {!! Form::submit("Create categorie") !!}
+    {!! Form::submit("Créer catégorie") !!}
     {!! Form::close() !!}
     <a href="{{ route('dashboard') }}">Dashboard</a>
 @stop
