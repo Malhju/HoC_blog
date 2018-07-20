@@ -51,6 +51,7 @@ class AdminPostsController extends Controller
         $Post->content = $input['content'];
         $Post->photo_id = $input['photo_id'];
         $Post->is_active = $input['is_active'];
+        $Post->category_id = $input['category_id'];
         $User->posts()->save($Post);
         return redirect()->route('admin.posts.index');
         
