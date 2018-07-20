@@ -40,6 +40,11 @@ Route::group(["middleware" => "auth"], function () {
     //Yassin
     Route::get('admin', 'AdminController@dashboard')->name('dashboard');
     Route::resource('admin/users', 'AdminUsersController', ['except'=>['store', 'update', 'destroy']]);
+
+    Route::post('admin', 'AdminCategoriesController@store')->name('createcategorie');
+
+    Route::post('admin', 'AdminPostsController@store')->name('createpost');
+
 });
  
 Auth::routes();
