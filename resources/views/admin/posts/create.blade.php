@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Créer un article</h1>
+    <h1 class="text-center">Créer un article</h1>
     
     {!! Form::open(['method' => 'POST', 'action' => 'AdminPostsController@store', 'files'=>'true']) !!}
         {!! Form::label("title", "Title") !!}

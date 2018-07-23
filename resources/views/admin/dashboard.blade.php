@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 @section('content')
-    <h1>Bonjour {{ Auth::user()->name}} ! </h1>
+    <h1 class="text-center">Bonjour {{ Auth::user()->name}} ! </h1>
     <a href="{{ route('posts.index') }}">Articles</a> <br>
     <a href="{{ route('categories.index') }}">Catégories</a> <br>
     <a href="{{ route('categories.create') }}">Créer une catégorie</a> <br>

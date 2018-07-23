@@ -11,7 +11,7 @@
 <body>
 
     
-<h1>Mon CREATE</h1>
+<h1 class="text-center">Mon CREATE</h1>
 
 
 CA CREER CHER!!
