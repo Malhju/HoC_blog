@@ -11,7 +11,7 @@
 <body>
 
     
-<h1>Mon DELETE</h1>
+<h1 class="text-center">Mon DELETE</h1>
 
 
 CA DELETE A BALLE!!

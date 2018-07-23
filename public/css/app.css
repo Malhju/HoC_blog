@@ -1,5 +1,25 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
 
+a {
+  text-underline: none;
+}
+
+a:hover {
+  text-underline: none;
+}
+
+figure {
+  overflow: hidden;
+}
+
+.img-crop {
+  overflow: hidden;
+}
+
+.img-crop img {
+  width: 100%;
+}
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -8348,5 +8368,15 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+
+.posts-list .img-crop {
+  height: 150px;
+}
+
+.posts-list h3 {
+  height: 50px;
+  overflow: hidden;
+  text-overflow: "...";
 }
 

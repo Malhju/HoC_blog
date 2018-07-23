@@ -11,7 +11,7 @@
 <body>
 
     
-<h1>Mon INDEX</h1>
+<h1 class="text-center">Mon INDEX</h1>
 
 
 CA INDEX GRAVE!!

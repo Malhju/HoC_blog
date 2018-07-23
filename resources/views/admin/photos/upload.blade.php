@@ -8,6 +8,6 @@
 </head>
 <body>
     
-<h1>Mon UPLOAD</h1>
+<h1 class="text-center">Mon UPLOAD</h1>
 </body>
 </html>

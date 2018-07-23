@@ -4,6 +4,23 @@
 
 // Variables
 @import "variables";
-
+@import "init";
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+.posts-list{
+  a {
+    &:hover {
+
+    }
+  }
+  .img-crop {
+    height: 150px;
+  }
+  h3{
+    height: 50px;
+    overflow: hidden;
+    text-overflow: "...";
+  }
+}
