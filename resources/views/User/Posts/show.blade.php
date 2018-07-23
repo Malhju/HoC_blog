@@ -1,14 +1,13 @@
 @extends('layouts.app')
 @section('content')
     <h1 class="text-center">{{$Post->title}}</h1>
-    <figure>
+    <figure class="figure">
         <div class="img-crop">
             {{ Html::image($Post->photos()->first() ? $Post->photos()->first()->file : '','text alternatif') }}
         </div>
-        <figcaption>
+        <figcaption class="figure-caption">
             <p>
                  {{$Post->content}}
-
             </p>
         </figcaption>
     </figure>
